@@ -2,20 +2,19 @@ import { Section } from "../Section/Section";
 import s from './WorkPost.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import {setName, setEmail, setPhone, resetForm, setPosition} from '../../redux/formSlise';
-import { useEffect } from "react";
+import { useEffect} from "react";
 import {Button} from "../Button/Button";
 import { Form } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {setAvatar} from '../../redux/formSlise';
 import {loginThunk} from '../../redux/asyncthunc';
-
+  
 export function WorkPost() {
 const dispatch = useDispatch();
 
 useEffect(()=>{
     dispatch(resetForm());
 }, [dispatch]);
-
 const nameValue = useSelector(state => state.form.name);
 const email = useSelector(state => state.form.email);
 const phone = useSelector(state => state.form.phone);
@@ -45,8 +44,10 @@ const onFileShange =(e) =>{
     dispatch(setAvatar(e.target.files[0].name))
 }
 
+
+
     return(
-<Section >
+    <Section id="section1" >
     <h2 className={s.header}>
     Working with POST request
     </h2>

@@ -5,7 +5,8 @@ import {WorkGet} from './Components/WorkGet/WorkGet';
 import {WorkPost} from './Components/WorkPost/WorkPost';
 
 function App() {
-  return (
+
+ return (
     <div className={style.App}>
 <AppBar/>
 <Hero/>
