@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/RybalovValentyn/abz.agency-test/static/css/main.77e881fc.css",
+    "main.js": "/RybalovValentyn/abz.agency-test/static/js/main.0720587a.js",
+    "static/media/bgdeskbig.png": "/RybalovValentyn/abz.agency-test/static/media/bgdeskbig.827be205d1bc9668d171.png",
+    "static/media/bgdesk.png": "/RybalovValentyn/abz.agency-test/static/media/bgdesk.b1ec0c0f86d0a6552d1a.png",
+    "static/media/bgtablet.png": "/RybalovValentyn/abz.agency-test/static/media/bgtablet.bc862e1edd97e2bc8228.png",
+    "static/media/bgmobi.png": "/RybalovValentyn/abz.agency-test/static/media/bgmobi.5c7804a68f6d28970c5e.png",
+    "static/media/Logo.svg": "/RybalovValentyn/abz.agency-test/static/media/Logo.8f783abd29c95eb1dec8eaf556755b85.svg",
+    "index.html": "/RybalovValentyn/abz.agency-test/index.html",
+    "main.77e881fc.css.map": "/RybalovValentyn/abz.agency-test/static/css/main.77e881fc.css.map",
+    "main.0720587a.js.map": "/RybalovValentyn/abz.agency-test/static/js/main.0720587a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.77e881fc.css",
+    "static/js/main.0720587a.js"
+  ]
+}
