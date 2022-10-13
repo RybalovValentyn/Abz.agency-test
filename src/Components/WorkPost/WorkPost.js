@@ -12,9 +12,6 @@ import {loginThunk} from '../../redux/asyncthunc';
 export function WorkPost() {
 const dispatch = useDispatch();
 
-useEffect(()=>{
-    dispatch(resetForm());
-}, [dispatch]);
 const nameValue = useSelector(state => state.form.name);
 const email = useSelector(state => state.form.email);
 const phone = useSelector(state => state.form.phone);
@@ -22,6 +19,11 @@ const position = useSelector(state => state.form.position);
 const radioBtn = useSelector(state => state.auth.position);
 const token = useSelector(state => state.auth.token);
 const isAuth = useSelector(state => state.auth.isAuth);
+
+useEffect(()=>{
+
+    dispatch(resetForm());
+}, [isAuth]);
 
 const onClickUsers = (e) =>{
 e.preventDefault()
@@ -33,24 +35,23 @@ formData.append('email', email);
 formData.append('phone', phone);
 formData.append('photo', fileField.files[0]);
 formData.append('Token', token);
-console.log([...formData][5][1]);
 dispatch(loginThunk(formData));
 }
+
 const ClickRadioBtn = (e) =>{
 dispatch(setPosition(e.target.id))
 };
 
-const onFileShange =(e) =>{   
-    dispatch(setAvatar(e.target.files[0].name))
+const onFileShange =(e) =>{ 
+      dispatch(setAvatar(e.target.files[0].name));
 }
 
 
 
     return(
+        
     <Section id="section1" >
-    <h2 className={s.header}>
-    Working with POST request
-    </h2>
+    <h2 className={s.header}>Working with POST request</h2>
 
 
     <form onSubmit={onClickUsers} className={s.form}>
@@ -84,8 +85,10 @@ const onFileShange =(e) =>{
 <Form.Group controlId="formFile" className={s.fileinput}>
     <Form.Control type="file" size="lg" onChange={onFileShange}/>
   </Form.Group>
-        <Button  type={'submit'} className='button'  name={'Sign up'} disabled={!isAuth} / >
+        <Button  type={'submit'} className='button'  name={'Sign up'} disabled={isAuth} / >
     </form>
+
 </Section>
     )
 }
+

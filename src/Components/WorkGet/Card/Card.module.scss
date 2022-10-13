@@ -17,6 +17,7 @@ ul{
     font-size: 16px;
     line-height: 26px;
     list-style: none;
+    border-radius: 10px;
     @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
         width: 328px;
         margin-top: 20px;

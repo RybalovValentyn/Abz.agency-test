@@ -1,16 +1,13 @@
 import s from './Hero.module.scss'
 import { Button } from '../Button/Button'
-import {tokenThunk} from '../../redux/asyncthunc';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import { Link, animateScroll as scroll } from "react-scroll";
 
 export const Hero =() =>{
     const isAuth = useSelector(state => state.auth.isAuth);
 
-    const dispatch = useDispatch();
-
     const onClickSignUp = () => {
-        // dispatch(tokenThunk());
+
         scroll.scrollToBottom('begin', {
             duration:500,
             delay: 10,

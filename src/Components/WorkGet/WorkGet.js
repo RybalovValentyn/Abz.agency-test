@@ -4,7 +4,7 @@ import {Button} from "../Button/Button";
 import {Card} from './Card/Card';
 import { useSelector, useDispatch } from 'react-redux';
 import {incrementPage} from '../../redux/reducer';
-import {usersShowMoreThunk, firstUsersThunk} from '../../redux/asyncthunc';
+import {usersShowMoreThunk, firstUsersThunk, tokenThunk} from '../../redux/asyncthunc';
 import {useEffect} from 'react';
 
 export function WorkGet() {
@@ -20,13 +20,13 @@ const filteredUser = [...users]?.sort((usera, userb) => {
 });
 
 useEffect(()=>{
-    if (users.length <= 0) {       
-    
+    if (users.length <= 0 ) {       
     dispatch(firstUsersThunk());
+      dispatch(tokenThunk());  
     }
 }, [users]);
 
-    const onClickUsers = ()=>{
+const onClickUsers = ()=>{
         dispatch(incrementPage())
        dispatch(usersShowMoreThunk())
     }

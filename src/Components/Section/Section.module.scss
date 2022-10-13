@@ -1,6 +1,7 @@
+@import '../../sass/base/colors';
 
 .container{
-    background-color: #E5E5E5; 
+    background-color: $body-bg-color; 
     margin-left: auto;
     margin-right: auto;
     text-align: center;

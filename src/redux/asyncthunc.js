@@ -46,8 +46,9 @@ export const currentThunk = createAsyncThunk(
   export const usersThunk = createAsyncThunk(
     'users/users',
     async (_, { rejectWithValue}) => {
-
+   
         try {
+ 
           const { data } = await axios.get(getUsers);
           return data;
         } catch (error) {
@@ -92,7 +93,8 @@ export const currentThunk = createAsyncThunk(
   );
 
   export const loginThunk = createAsyncThunk(
-    'users/login',    
+    'users/login',  
+  
     async (formData,{ rejectWithValue}) => {
 const headers = { 
   "Content-Type": "multipart/form-data",
@@ -104,7 +106,7 @@ const headers = {
         return data;
       } catch (error) {
         return rejectWithValue({
-          error,
+          error: error.message,
         });
       }
     },
